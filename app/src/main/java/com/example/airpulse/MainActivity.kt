@@ -3,18 +3,23 @@ package com.example.airpulse
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.viewModels
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import com.example.airpulse.ui.screen.AirPulseMainScreen
 import com.example.airpulse.ui.theme.AirPulseTheme
+import com.example.airpulse.viewmodel.AirQualityViewModel
 
 class MainActivity : ComponentActivity() {
+    private val airQualityViewModel: AirQualityViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        // Initialize repository and viewModel
+//        val repository = AirQualityRepository()
+//        val viewModel = AirQualityViewModel(repository)
+
         setContent {
             AirPulseTheme {
                 // A surface container using the 'background' color from the theme
@@ -22,25 +27,10 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting("Android")
+                    AirPulseMainScreen(viewModel = airQualityViewModel)
+//                    AirQualityScreen(viewModel = airQualityViewModel)
                 }
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    AirPulseTheme {
-        Greeting("Android")
     }
 }
