@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "928437783825",
+    "project_id": "airpulse-f0c3c",
+    "storage_bucket": "airpulse-f0c3c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:928437783825:android:12e57dcb996ae0e48990b0",
+        "android_client_info": {
+          "package_name": "com.example.airpulse"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBK2Aza6sv8vd_x0lybD5uN1sWF7n097p0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:928437783825:android:f910cf2e2724d74b8990b0",
+        "android_client_info": {
+          "package_name": "com.go_jaru.company"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBK2Aza6sv8vd_x0lybD5uN1sWF7n097p0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

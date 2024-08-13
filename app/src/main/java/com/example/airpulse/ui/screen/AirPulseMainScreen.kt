@@ -49,11 +49,11 @@ fun AirPulseMainScreen(viewModel: AirQualityViewModel) {
                     )
 
                     Button(onClick = { viewModel.fetchAirQualityData("here") }) {
-                        Text("Refresh Data")
+                        Text("Refresh")
                     }
 
                     // Display tips on reducing air pollution
-                    TipsSection(tips = listOf("Avoid outdoor activities", "Use air purifiers", "Close windows during high pollution periods"))
+                    TipsSection(tips = listOf("Kurangi menggunakan kendaraan bermotor", "Matikan mesin mobil", "Jangan membakar sampah", "Menanam dan merawat pohon", "Kurangi penggunaan energi di rumah"))
                 }
             } ?: run {
                 Text(text = "Loading data...")

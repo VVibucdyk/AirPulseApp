@@ -37,14 +37,7 @@ class MainActivity : ComponentActivity() {
                     Log.w("FIREBASE PERMISSION", "Fetching FCM registration token failed", task.exception)
                     return@OnCompleteListener
                 }
-
-                // Get new FCM registration token
                 val token = task.result
-
-                // Log and toast
-//                val msg = "Ini dia token kamu ${token}"
-//                Log.d("FIREBASE PERMISSION", msg)
-//                Toast.makeText(baseContext, msg, Toast.LENGTH_SHORT).show()
             })
         } else {
             // TODO: Inform user that that your app will not show notifications.
@@ -81,9 +74,6 @@ class MainActivity : ComponentActivity() {
             ) {
                 // Permission is granted, proceed with your app logic
                 // Example: initialize FCM, set up notifications, etc.
-                scheduleAqiCheck(this)
-                WorkManager.getInstance(this)
-                    .enqueue(OneTimeWorkRequestBuilder<AirQualityWorker>().build())
             } else if (shouldShowRequestPermissionRationale(android.Manifest.permission.POST_NOTIFICATIONS)) {
                 showPermissionRationale()
             } else {

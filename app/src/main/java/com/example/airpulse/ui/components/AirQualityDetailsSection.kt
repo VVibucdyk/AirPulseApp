@@ -27,15 +27,15 @@ fun AirQualityDetailsSection(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        Text(text = "Air Quality Details", style = MaterialTheme.typography.headlineSmall)
+        Text(text = "Kondisi Kuatlias Udara", style = MaterialTheme.typography.headlineSmall)
         Spacer(modifier = Modifier.height(8.dp))
-        Text(text = "Temperature: $temperature°C")
+        Text(text = "Temperatur: $temperature°C")
         Spacer(modifier = Modifier.height(8.dp))
-        Text(text = "Humidity: $humidity%")
+        Text(text = "Kelembapan: $humidity%")
         Spacer(modifier = Modifier.height(8.dp))
         Text(text = "PM10: $pm10")
         Spacer(modifier = Modifier.height(8.dp))
-        Text(text = "Dominant Pollutant: $dominantPollutant")
+        Text(text = "Polutan Dominan: $dominantPollutant")
         Spacer(modifier = Modifier.height(16.dp))
     }
 

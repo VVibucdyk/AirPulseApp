@@ -27,7 +27,7 @@ fun CurrentAqiSection(aqi: Int, city: String) {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        Text(text = "Current AQI in $city", style = MaterialTheme.typography.headlineMedium, textAlign = TextAlign.Center)
+        Text(text = "AQI Saat Ini Di $city", style = MaterialTheme.typography.headlineMedium, textAlign = TextAlign.Center)
         Spacer(modifier = Modifier.height(8.dp))
         Text(
             text = "$aqi",

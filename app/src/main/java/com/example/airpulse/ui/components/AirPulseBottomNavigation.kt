@@ -16,14 +16,12 @@ fun AirPulseBottomNavigation(
     onTabSelected: (String) -> Unit
 ) {
     NavigationBar {
-        val items = listOf("Home", "Tips", "Settings")
+        val items = listOf("Home")
         items.forEach { item ->
             NavigationBarItem(
                 icon = {
                     when (item) {
                         "Home" -> Icon(imageVector = Icons.Filled.Home, contentDescription = "Home")
-                        "Tips" -> Icon(imageVector = Icons.Filled.Info, contentDescription = "Tips")
-                        "Settings" -> Icon(imageVector = Icons.Filled.Settings, contentDescription = "Settings")
                     }
                 },
                 label = { Text(item) },
