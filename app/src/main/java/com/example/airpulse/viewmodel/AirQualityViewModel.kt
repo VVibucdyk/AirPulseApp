@@ -5,6 +5,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.airpulse.data.api.RetrofitInstance
 import com.example.airpulse.data.model.AirQualityData
 import com.example.airpulse.data.repository.AirQualityRepository
+import com.example.airpulse.notification.FirebaseService
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
@@ -23,11 +24,23 @@ class AirQualityViewModel : ViewModel() {
         viewModelScope.launch {
             try {
                 val response = repository.getAirQualityData(city)
-                _airQualityData.value = response.data
+                val data = response.data
+                _airQualityData.value = data
+
+                // Check if AQI is high and trigger notification
+                if (data.aqi > 100) { // You can adjust the threshold as needed
+                    sendHighAqiNotification(data.city.name, data.aqi)
+                }
             } catch (e: Exception) {
                 _airQualityData.value = null
                 Log.e("AirQualityViewModel", "Error fetching data: ${e.message}")
             }
         }
+    }
+
+    private fun sendHighAqiNotification(city: String, aqi: Int) {
+        val notificationTitle = "High AQI Alert"
+        val notificationMessage = "The AQI in $city is currently $aqi. Take precautions."
+        FirebaseService().sendNotification(notificationTitle, notificationMessage)
     }
 }

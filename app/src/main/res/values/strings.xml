@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">AirPulse</string>
+    <string name="msg_token_fmt">Ini token kamu!</string>
 </resources>
